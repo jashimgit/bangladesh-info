@@ -1,0 +1,13 @@
+.navlink:hover {
+    background-color: #006838 !important;
+    color: #fff !important;
+    border-radius: 5px;
+}
+.navlink {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #494f54!important
+}
+.navlink svg {
+    margin-right: 7px;
+}
