@@ -1,27 +1,34 @@
-import Dashboard from './component/dashboard/Admin/Dashboard';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import UdcHome from './component/front/UdcHome';
-import Counter from './component/lib/Counter';
-import Division from './component/front/Division';
-import District from './component/front/District';
-import AdminDivision from './component/dashboard/Admin/division/AdminDivision';
-import AdminDistrict from './component/dashboard/Admin/district/AdminDistrict';
-import AdminUpazila from './component/dashboard/Admin/upazila/AdminUpazila';
-import AdminUnion from './component/dashboard/Admin/union/AdminUnion';
-
+import Dashboard from "./component/dashboard/Admin/Dashboard";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import UdcHome from "./component/front/UdcHome";
+import Counter from "./component/lib/Counter";
+import Division from "./component/front/Division";
+import District from "./component/front/District";
+import AdminDivision from "./component/dashboard/Admin/division/AdminDivision";
+import AdminDistrict from "./component/dashboard/Admin/district/AdminDistrict";
+import AdminUpazila from "./component/dashboard/Admin/upazila/AdminUpazila";
+import AdminUnion from "./component/dashboard/Admin/union/AdminUnion";
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route path='/dashboard' exact>
+                <Route path="/dashboard" exact>
                     <Dashboard />
                 </Route>
                 <Route path="/dashboard/division" exact>
-                    <AdminDivision />
+                    <Counter
+                        render={(division, district) => (
+                            <AdminDivision division={division} />
+                        )}
+                    />
                 </Route>
                 <Route path="/dashboard/district" exact>
-                    <AdminDistrict />
+                    <Counter
+                        render={(division, district) => (
+                            <AdminDistrict division={division} />
+                        )}
+                    />
                 </Route>
                 <Route path="/dashboard/upazila" exact>
                     <AdminUpazila />
@@ -29,10 +36,8 @@ function App() {
                 <Route path="/dashboard/union" exact>
                     <AdminUnion />
                 </Route>
-                <Route path="/add-division">
-                    
-                </Route>
-                <Route path='/' exact>
+                <Route path="/add-division"></Route>
+                <Route path="/" exact>
                     <Counter
                         render={(division, district) => (
                             <UdcHome division={division} district={district} />

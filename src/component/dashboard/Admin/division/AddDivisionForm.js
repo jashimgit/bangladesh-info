@@ -6,7 +6,7 @@ export default function AddDivisionForm() {
     const {handleSubmit, register} = useForm();
     
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         axios.post('http://localhost:8000/division', {
             div_name: data.div_name,
             div_bn_name: data.div_bn_name,
