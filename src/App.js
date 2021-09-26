@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import UdcHome from './component/front/UdcHome';
 import Counter from './component/lib/Counter';
 import Division from './component/front/Division';
-import District from './component/front/Districtct';
+import District from './component/front/District';
 import AdminDivision from './component/dashboard/Admin/division/AdminDivision';
 import AdminDistrict from './component/dashboard/Admin/district/AdminDistrict';
 import AdminUpazila from './component/dashboard/Admin/upazila/AdminUpazila';
